@@ -4,16 +4,25 @@ public class Projectile : MonoBehaviour
 {
     public GameObject _target;
     public float _projectileSpeed;
+    public int _damage;
+    public Effect _effect;
+    
     private Vector3 _targetPosition;
 
     private void Update()
     {
-        if (_target != null)
+        transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _projectileSpeed * Time.deltaTime);
+        if (Vector3.Distance(transform.position, _targetPosition) == 0f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _projectileSpeed * Time.deltaTime);
-            if (Vector3.Distance(transform.position, _targetPosition) == 0f)
+            if (_effect != null)
             {
-                Destroy(this.gameObject);
+                _effect.ApplyEffect(_target);
+                Destroy(gameObject);
+            }
+            else
+            {
+                _target.GetComponent<Mob>().RemoveHealth(_damage);
+                Destroy(gameObject);
             }
         }
     }
@@ -26,4 +35,3 @@ public class Projectile : MonoBehaviour
         }
     }
 }
-

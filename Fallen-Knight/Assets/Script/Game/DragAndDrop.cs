@@ -36,12 +36,11 @@ public class DragAndDrop : MonoBehaviour
 
         if (!Physics.Raycast(ray, out hit, Mathf.Infinity, _layerMask))
         {
-            transform.position = GetMousePosition();
+            transform.position = new Vector3(GetMousePosition().x, 1, GetMousePosition().z);
         }
         else
         {
             transform.position = new Vector3(hit.transform.position.x, hit.transform.position.y + 1, hit.transform.position.z);
-            Debug.Log("Cannot move here");
         }
     }
 }

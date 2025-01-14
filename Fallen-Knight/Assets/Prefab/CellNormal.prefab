@@ -149,7 +149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5535338900458637241}
-  - component: {fileID: 527027744108942129}
+  - component: {fileID: 2223948907064106599}
   m_Layer: 0
   m_Name: CellNormal
   m_TagString: Untagged
@@ -174,7 +174,7 @@ Transform:
   - {fileID: 883335245024593516}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &527027744108942129
+--- !u!114 &2223948907064106599
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
